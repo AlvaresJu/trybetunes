@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Loging from './pages/Login';
+import Login from './pages/Login';
 import Search from './pages/Search';
 import Album from './pages/Album';
 import Favorites from './pages/Favorites';
@@ -17,7 +17,7 @@ class App extends React.Component {
         <Route path="/favorites" component={ Favorites } />
         <Route path="/search" component={ Search } />
         <Route path="/profile" component={ Profile } exact />
-        <Route path="/" component={ Loging } exact />
+        <Route path="/" component={ Login } exact />
         <Route path="*" component={ NotFound } />
       </Switch>
     );
