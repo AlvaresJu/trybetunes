@@ -48,21 +48,21 @@ class Header extends Component {
             activeClassName="selected"
             data-testid="link-to-search"
           >
-            Pesquisa
+            Buscar Artista
           </NavLink>
           <NavLink
             to="/favorites"
             activeClassName="selected"
             data-testid="link-to-favorites"
           >
-            Favoritos
+            Músicas Favoritas
           </NavLink>
           <NavLink
             to="/profile"
             activeClassName="selected"
             data-testid="link-to-profile"
           >
-            Perfil
+            Meu Perfil
           </NavLink>
         </nav>
       </>
