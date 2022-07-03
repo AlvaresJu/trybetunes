@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { BsPersonCircle } from 'react-icons/bs';
+import { NavLink } from 'react-router-dom';
 import { getUser } from '../services/userAPI';
 import Loading from './Loading';
+import logo from '../images/Logo-header.png';
 
 class Header extends Component {
   constructor() {
@@ -32,13 +34,38 @@ class Header extends Component {
     const { loading, userName } = this.state;
     if (loading) return <Loading />;
     return (
-      <header data-testid="header-component">
-        <img alt="Trybe Tunes logo" src="" />
-        <div>
-          <BsPersonCircle />
-          <p data-testid="header-user-name">{ userName }</p>
-        </div>
-      </header>
+      <>
+        <header data-testid="header-component">
+          <img alt="Trybe Tunes logo" src={ logo } />
+          <div>
+            <BsPersonCircle />
+            <p data-testid="header-user-name">{ userName }</p>
+          </div>
+        </header>
+        <nav>
+          <NavLink
+            to="/search"
+            activeClassName="selected"
+            data-testid="link-to-search"
+          >
+            Pesquisa
+          </NavLink>
+          <NavLink
+            to="/favorites"
+            activeClassName="selected"
+            data-testid="link-to-favorites"
+          >
+            Favoritos
+          </NavLink>
+          <NavLink
+            to="/profile"
+            activeClassName="selected"
+            data-testid="link-to-profile"
+          >
+            Perfil
+          </NavLink>
+        </nav>
+      </>
     );
   }
 }
