@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { BsPersonCircle } from 'react-icons/bs';
 import { NavLink } from 'react-router-dom';
 import { getUser } from '../services/userAPI';
@@ -18,14 +19,23 @@ class Header extends Component {
     this.fetchUser();
   }
 
+  checkIfIsloaded = () => {
+    const { isLoaded } = this.props;
+    const { loading } = this.state;
+    isLoaded(!loading);
+  }
+
   fetchUser = () => {
     this.setState({
       loading: true,
     }, async () => {
+      this.checkIfIsloaded();
       const requestUserData = await getUser();
       this.setState({
         userName: requestUserData.name,
         loading: false,
+      }, () => {
+        this.checkIfIsloaded();
       });
     });
   }
@@ -69,5 +79,9 @@ class Header extends Component {
     );
   }
 }
+
+Header.propTypes = {
+  isLoaded: PropTypes.func.isRequired,
+};
 
 export default Header;
