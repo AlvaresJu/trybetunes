@@ -11,7 +11,7 @@ class Search extends Component {
       artistInput: '',
       loading: false,
       searchedArtist: '',
-      albumsList: undefined,
+      albumList: undefined,
       headerLoaded: false,
     };
   }
@@ -42,9 +42,9 @@ class Search extends Component {
       artistInput: '',
     }), async () => {
       const { searchedArtist } = this.state;
-      const artistAlbumsData = await searchAlbumsAPI(searchedArtist);
+      const artistAlbums = await searchAlbumsAPI(searchedArtist);
       this.setState({
-        albumsList: artistAlbumsData,
+        albumList: artistAlbums,
         loading: false,
       });
     });
@@ -80,7 +80,7 @@ class Search extends Component {
   }
 
   render() {
-    const { artistInput, loading, albumsList, headerLoaded, searchedArtist } = this.state;
+    const { artistInput, loading, albumList, headerLoaded, searchedArtist } = this.state;
     return (
       <div data-testid="page-search">
         <Header isLoaded={ this.isHeaderLoaded } />
@@ -108,7 +108,7 @@ class Search extends Component {
         }
         <section>
           {
-            loading ? <Loading /> : this.searchReturn(albumsList, searchedArtist)
+            loading ? <Loading /> : this.searchReturn(albumList, searchedArtist)
           }
         </section>
       </div>

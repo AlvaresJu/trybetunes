@@ -12,7 +12,7 @@ class Album extends Component {
       headerLoaded: false,
       loading: false,
       albumData: undefined,
-      musicsData: [],
+      dataMusics: [],
     };
   }
 
@@ -28,7 +28,7 @@ class Album extends Component {
       const requestMusicsData = await getMusics(match.params.id);
       this.setState({
         albumData: requestMusicsData[0],
-        musicsData: requestMusicsData.filter((_obj, index) => index !== 0),
+        dataMusics: requestMusicsData.filter((_obj, index) => index !== 0),
         loading: false,
       });
     });
@@ -40,12 +40,12 @@ class Album extends Component {
     });
   }
 
-  selectPageContent = (loading, albumData, musicsData) => {
+  selectPageContent = (loading, albumData, dataMusics) => {
     if (loading) return <Loading />;
     if (!albumData) return <h1>Álbum não encontrado</h1>;
 
     const { artworkUrl100, collectionName, artistName, releaseDate } = albumData;
-    const musicCards = musicsData.map((musicObj) => (
+    const musicCards = dataMusics.map((musicObj) => (
       <MusicCard
         key={ musicObj.trackId }
         musicData={ musicObj }
@@ -74,12 +74,12 @@ class Album extends Component {
   }
 
   render() {
-    const { headerLoaded, loading, albumData, musicsData } = this.state;
+    const { headerLoaded, loading, albumData, dataMusics } = this.state;
     return (
       <div data-testid="page-album">
         <Header isLoaded={ this.isHeaderLoaded } />
         {
-          headerLoaded && this.selectPageContent(loading, albumData, musicsData)
+          headerLoaded && this.selectPageContent(loading, albumData, dataMusics)
         }
       </div>
     );
