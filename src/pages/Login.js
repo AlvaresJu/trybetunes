@@ -79,7 +79,7 @@ Login.propTypes = {
 
 Login.defaultProps = {
   history: {
-    push: 'ƒ push() {}',
+    push: () => {},
   },
 };
 

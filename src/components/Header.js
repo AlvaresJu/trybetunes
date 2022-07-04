@@ -19,12 +19,6 @@ class Header extends Component {
     this.fetchUser();
   }
 
-  checkIfIsloaded = () => {
-    const { isLoaded } = this.props;
-    const { loading } = this.state;
-    isLoaded(!loading);
-  }
-
   fetchUser = () => {
     this.setState({
       loading: true,
@@ -38,6 +32,12 @@ class Header extends Component {
         this.checkIfIsloaded();
       });
     });
+  }
+
+  checkIfIsloaded = () => {
+    const { isLoaded } = this.props;
+    const { loading } = this.state;
+    isLoaded(!loading);
   }
 
   render() {

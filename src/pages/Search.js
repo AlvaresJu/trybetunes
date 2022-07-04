@@ -50,11 +50,10 @@ class Search extends Component {
     });
   }
 
-  searchReturn = (albums) => {
+  searchReturn = (albums, artist) => {
     if (!albums) return <p />;
     if (albums.length === 0) return <h1>Nenhum álbum foi encontrado</h1>;
 
-    const { searchedArtist } = this.state;
     const yearEndPosition = 4;
     const albumCards = albums.map(({
       artworkUrl100,
@@ -74,14 +73,14 @@ class Search extends Component {
     ));
     return (
       <>
-        <h3>{`Resultado de álbuns de: ${searchedArtist}`}</h3>
+        <h3>{`Resultado de álbuns de: ${artist}`}</h3>
         <div>{ albumCards }</div>
       </>
     );
   }
 
   render() {
-    const { artistInput, loading, albumsList, headerLoaded } = this.state;
+    const { artistInput, loading, albumsList, headerLoaded, searchedArtist } = this.state;
     return (
       <div data-testid="page-search">
         <Header isLoaded={ this.isHeaderLoaded } />
@@ -109,7 +108,7 @@ class Search extends Component {
         }
         <section>
           {
-            loading ? <Loading /> : this.searchReturn(albumsList)
+            loading ? <Loading /> : this.searchReturn(albumsList, searchedArtist)
           }
         </section>
       </div>
