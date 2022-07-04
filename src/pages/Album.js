@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { getFavoriteSongs } from '../services/favoriteSongsAPI';
 import Header from '../components/Header';
 import Loading from '../components/Loading';
 import getMusics from '../services/musicsAPI';
@@ -13,11 +14,13 @@ class Album extends Component {
       loading: false,
       albumData: undefined,
       musicsData: [],
+      favoriteList: [],
     };
   }
 
   componentDidMount() {
     this.fetchMusics();
+    this.fetchFavoriteMusics();
   }
 
   fetchMusics = () => {
@@ -34,13 +37,25 @@ class Album extends Component {
     });
   }
 
+  fetchFavoriteMusics = () => {
+    this.setState({
+      loading: true,
+    }, async () => {
+      const favorites = await getFavoriteSongs();
+      this.setState({
+        favoriteList: favorites,
+        loading: false,
+      });
+    });
+  }
+
   isHeaderLoaded = (aswer) => {
     this.setState({
       headerLoaded: aswer,
     });
   }
 
-  selectPageContent = (loading, albumData, musicsData) => {
+  selectPageContent = (loading, albumData, musicsData, favoriteList) => {
     if (loading) return <Loading />;
     if (!albumData) return <h1>Álbum não encontrado</h1>;
 
@@ -49,6 +64,7 @@ class Album extends Component {
       <MusicCard
         key={ musicObj.trackId }
         musicData={ musicObj }
+        favoriteList={ favoriteList }
       />
     ));
     return (
@@ -74,12 +90,17 @@ class Album extends Component {
   }
 
   render() {
-    const { headerLoaded, loading, albumData, musicsData } = this.state;
+    const { headerLoaded, loading, albumData, musicsData, favoriteList } = this.state;
     return (
       <div data-testid="page-album">
         <Header isLoaded={ this.isHeaderLoaded } />
         {
-          headerLoaded && this.selectPageContent(loading, albumData, musicsData)
+          headerLoaded && this.selectPageContent(
+            loading,
+            albumData,
+            musicsData,
+            favoriteList,
+          )
         }
       </div>
     );

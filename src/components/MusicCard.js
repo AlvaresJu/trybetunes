@@ -12,6 +12,20 @@ class MusicCard extends Component {
     };
   }
 
+  componentDidMount() {
+    const { musicData, favoriteList } = this.props;
+    this.checkIfInFavoriteList(musicData, favoriteList);
+  }
+
+  checkIfInFavoriteList = (music, favorites) => {
+    const isFavorite = favorites.some(({ trackId }) => trackId === music.trackId);
+    if (isFavorite) {
+      this.setState({
+        favoriteMusic: true,
+      });
+    }
+  }
+
   handleCheck = ({ target }) => {
     const { name, checked } = target;
     this.setState({
@@ -66,6 +80,7 @@ class MusicCard extends Component {
 }
 
 MusicCard.propTypes = {
+  favoriteList: PropTypes.arrayOf(PropTypes.object).isRequired,
   musicData: PropTypes.shape({
     trackName: PropTypes.string.isRequired,
     trackId: PropTypes.number.isRequired,
