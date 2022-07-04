@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { addSong } from '../services/favoriteSongsAPI';
+import { addSong, getFavoriteSongs } from '../services/favoriteSongsAPI';
 import Loading from './Loading';
 
 class MusicCard extends Component {
@@ -9,12 +9,28 @@ class MusicCard extends Component {
     this.state = {
       favoriteMusic: false,
       loading: false,
+      favoriteList: [],
     };
   }
 
   componentDidMount() {
-    const { musicData, favoriteList } = this.props;
-    this.checkIfInFavoriteList(musicData, favoriteList);
+    this.fetchFavoriteMusics();
+  }
+
+  fetchFavoriteMusics = () => {
+    this.setState({
+      loading: true,
+    }, async () => {
+      const favorites = await getFavoriteSongs();
+      this.setState({
+        favoriteList: favorites,
+        loading: false,
+      }, () => {
+        const { musicData } = this.props;
+        const { favoriteList } = this.state;
+        this.checkIfInFavoriteList(musicData, favoriteList);
+      });
+    });
   }
 
   checkIfInFavoriteList = (music, favorites) => {
@@ -33,16 +49,18 @@ class MusicCard extends Component {
     }, () => {
       const { favoriteMusic } = this.state;
       const { musicData } = this.props;
-      if (favoriteMusic) this.hadlefavorite(musicData);
+      if (favoriteMusic) this.handleFavoriteAdd(musicData);
     });
   }
 
-  hadlefavorite = (musicData) => {
+  handleFavoriteAdd = (musicData) => {
     this.setState({
       loading: true,
     }, async () => {
       await addSong(musicData);
+      const favorites = await getFavoriteSongs();
       this.setState({
+        favoriteList: favorites,
         loading: false,
       });
     });
@@ -80,7 +98,6 @@ class MusicCard extends Component {
 }
 
 MusicCard.propTypes = {
-  favoriteList: PropTypes.arrayOf(PropTypes.object).isRequired,
   musicData: PropTypes.shape({
     trackName: PropTypes.string.isRequired,
     trackId: PropTypes.number.isRequired,
