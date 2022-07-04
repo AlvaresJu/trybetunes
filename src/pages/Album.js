@@ -45,12 +45,10 @@ class Album extends Component {
     if (!albumData) return <h1>Álbum não encontrado</h1>;
 
     const { artworkUrl100, collectionName, artistName, releaseDate } = albumData;
-    const musicCards = musicsData.map(({ trackId, trackName, previewUrl }) => (
+    const musicCards = musicsData.map((musicObj) => (
       <MusicCard
-        key={ trackId }
-        musicName={ trackName }
-        musicUrl={ previewUrl }
-        musicId={ trackId }
+        key={ musicObj.trackId }
+        musicData={ musicObj }
       />
     ));
     return (
