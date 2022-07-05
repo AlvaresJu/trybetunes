@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import Loading from '../components/Loading';
 import getMusics from '../services/musicsAPI';
 import MusicCard from '../components/MusicCard';
+import { addSong, getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
 
 class Album extends Component {
   constructor() {
@@ -13,11 +14,13 @@ class Album extends Component {
       loading: false,
       albumData: undefined,
       dataMusics: [],
+      favoriteList: [],
     };
   }
 
   componentDidMount() {
     this.fetchMusics();
+    this.fetchFavoriteMusics();
   }
 
   fetchMusics = () => {
@@ -34,13 +37,39 @@ class Album extends Component {
     });
   }
 
+  fetchFavoriteMusics = () => {
+    this.setState({
+      loading: true,
+    }, async () => {
+      const favorites = await getFavoriteSongs();
+      this.setState({
+        favoriteList: favorites,
+        loading: false,
+      });
+    });
+  }
+
   isHeaderLoaded = (aswer) => {
     this.setState({
       headerLoaded: aswer,
     });
   }
 
-  selectPageContent = (loading, albumData, dataMusics) => {
+  updateFavorites = (favoriteMusic, musicData) => {
+    this.setState({
+      loading: true,
+    }, async () => {
+      if (favoriteMusic) await addSong(musicData);
+      if (!favoriteMusic) await removeSong(musicData);
+      const favorites = await getFavoriteSongs();
+      this.setState({
+        favoriteList: favorites,
+        loading: false,
+      });
+    });
+  }
+
+  selectPageContent = (loading, albumData, dataMusics, favoriteList) => {
     if (loading) return <Loading />;
     if (!albumData) return <h1>Álbum não encontrado</h1>;
 
@@ -49,6 +78,8 @@ class Album extends Component {
       <MusicCard
         key={ musicObj.trackId }
         musicData={ musicObj }
+        favoriteList={ favoriteList }
+        updateFavorites={ this.updateFavorites }
       />
     ));
     return (
@@ -74,12 +105,14 @@ class Album extends Component {
   }
 
   render() {
-    const { headerLoaded, loading, albumData, dataMusics } = this.state;
+    const { headerLoaded, loading, albumData, dataMusics, favoriteList } = this.state;
     return (
       <div data-testid="page-album">
         <Header isLoaded={ this.isHeaderLoaded } />
         {
-          headerLoaded && this.selectPageContent(loading, albumData, dataMusics)
+          headerLoaded && this.selectPageContent(
+            loading, albumData, dataMusics, favoriteList,
+          )
         }
       </div>
     );
@@ -89,17 +122,9 @@ class Album extends Component {
 Album.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.shape({
-      id: PropTypes.string,
-    }),
-  }),
-};
-
-Album.defaultProps = {
-  match: {
-    params: {
-      id: '',
-    },
-  },
+      id: PropTypes.string.isRequired,
+    }).isRequired,
+  }).isRequired,
 };
 
 export default Album;

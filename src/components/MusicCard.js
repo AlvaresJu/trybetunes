@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { addSong, getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
 import Loading from './Loading';
 
 class MusicCard extends Component {
@@ -9,28 +8,12 @@ class MusicCard extends Component {
     this.state = {
       favoriteMusic: false,
       loading: false,
-      favoriteList: [],
     };
   }
 
   componentDidMount() {
-    this.fetchFavoriteMusics();
-  }
-
-  fetchFavoriteMusics = () => {
-    this.setState({
-      loading: true,
-    }, async () => {
-      const favorites = await getFavoriteSongs();
-      this.setState({
-        favoriteList: favorites,
-        loading: false,
-      }, () => {
-        const { musicData } = this.props;
-        const { favoriteList } = this.state;
-        this.checkIfInFavoriteList(musicData, favoriteList);
-      });
-    });
+    const { musicData, favoriteList } = this.props;
+    this.checkIfInFavoriteList(musicData, favoriteList);
   }
 
   checkIfInFavoriteList = (music, favorites) => {
@@ -48,22 +31,8 @@ class MusicCard extends Component {
       [name]: checked,
     }, () => {
       const { favoriteMusic } = this.state;
-      const { musicData } = this.props;
-      if (favoriteMusic) this.handleFavorite(musicData, addSong);
-      if (!favoriteMusic) this.handleFavorite(musicData, removeSong);
-    });
-  }
-
-  handleFavorite = (musicData, callback) => {
-    this.setState({
-      loading: true,
-    }, async () => {
-      await callback(musicData);
-      const favorites = await getFavoriteSongs();
-      this.setState({
-        favoriteList: favorites,
-        loading: false,
-      });
+      const { musicData, updateFavorites } = this.props;
+      updateFavorites(favoriteMusic, musicData);
     });
   }
 
@@ -99,19 +68,13 @@ class MusicCard extends Component {
 }
 
 MusicCard.propTypes = {
+  favoriteList: PropTypes.arrayOf(PropTypes.object).isRequired,
+  updateFavorites: PropTypes.func.isRequired,
   musicData: PropTypes.shape({
     trackName: PropTypes.string.isRequired,
     trackId: PropTypes.number.isRequired,
     previewUrl: PropTypes.string.isRequired,
-  }),
-};
-
-MusicCard.defaultProps = {
-  musicData: PropTypes.shape({
-    trackName: '',
-    trackId: 0,
-    previewUrl: '',
-  }),
+  }).isRequired,
 };
 
 export default MusicCard;
