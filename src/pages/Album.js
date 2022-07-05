@@ -12,7 +12,7 @@ class Album extends Component {
     this.state = {
       headerLoaded: false,
       loading: false,
-      albumData: undefined,
+      albumData: {},
       dataMusics: [],
       favoriteList: [],
     };
