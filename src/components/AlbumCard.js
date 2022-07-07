@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import '../styles/albumCard.css';
 
 class AlbumCard extends Component {
   render() {
@@ -15,6 +16,7 @@ class AlbumCard extends Component {
       <Link
         to={ `/album/${collectionId}` }
         data-testid={ `link-to-album-${collectionId}` }
+        className="album-card"
       >
         <div>
           <img src={ collectionImage } alt={ `Album: ${collectionName}` } />

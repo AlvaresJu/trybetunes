@@ -4,6 +4,7 @@ import AlbumCard from '../components/AlbumCard';
 import Header from '../components/Header';
 import Loading from '../components/Loading';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
+import '../styles/search.css';
 
 class Search extends Component {
   constructor() {
@@ -75,7 +76,7 @@ class Search extends Component {
     return (
       <>
         <h3>{`Resultado de álbuns de: ${artist}`}</h3>
-        <div>{ albumCards }</div>
+        <div className="albums">{ albumCards }</div>
       </>
     );
   }
@@ -87,7 +88,7 @@ class Search extends Component {
         <Header isLoaded={ this.isHeaderLoaded } />
         {
           headerLoaded && (
-            <form>
+            <form className="form-search">
               <input
                 type="text"
                 name="artistInput"
@@ -96,7 +97,7 @@ class Search extends Component {
                 value={ artistInput }
                 onChange={ this.handleChange }
               />
-              <BsSearch />
+              <BsSearch className="search-icon" />
               <button
                 type="submit"
                 data-testid="search-artist-button"
@@ -108,7 +109,7 @@ class Search extends Component {
             </form>
           )
         }
-        <section>
+        <section className="albums-search">
           {
             loading ? <Loading /> : this.searchReturn(albumList, searchedArtist)
           }

@@ -4,7 +4,11 @@ header {
   box-shadow: 0 4px 1px rgba(0, 0, 0, 0.25);
   display: flex;
   justify-content: space-between;
-  padding: 0 30px 25px;
+  padding: 0 30px 20px;
+}
+
+header img {
+  height: 75px;
 }
 
 .user-header {
@@ -14,16 +18,16 @@ header {
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   display: flex;
   justify-content: space-between;
-  padding: 8px 10px;
+  padding: 8px;
 }
 
 .user-header p {
   color: rgb(41, 49, 61);
-  font-size: 18px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 500;
   line-height: 18px;
-  margin: 0 20px;
+  margin: 0 15px;
 }
 
 .user-icon {
@@ -44,7 +48,7 @@ header {
 nav {
   background: rgb(240, 242, 245);
   display: flex;
-  font-size: 23px;
+  font-size: 22px;
   font-weight: 700;
   justify-content: space-around;
   line-height: 29px;
@@ -53,7 +57,7 @@ nav {
 nav a {
   border: 3px solid whitesmoke;
   color: rgb(44, 168, 123);
-  padding: 15px 20px;
+  padding: 12px 20px;
   text-align: center;
   text-decoration: none;
   width: 33.33%;
