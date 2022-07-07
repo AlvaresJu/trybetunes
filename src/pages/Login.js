@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { BsSearch } from 'react-icons/bs';
 import Loading from '../components/Loading';
 import { createUser } from '../services/userAPI';
 import logo from '../images/LOGO_POSITIVA 1.png';
+import '../styles/login.css';
 
 class Login extends Component {
   constructor() {
@@ -46,9 +46,9 @@ class Login extends Component {
     const { userData, loading } = this.state;
     if (loading) return <Loading />;
     return (
-      <div data-testid="page-login">
-        <img alt="Trybe Tunes logo" src={ logo } />
-        <form>
+      <div data-testid="page-login" className="login-page">
+        <img alt="Trybe Tunes logo" src={ logo } className="logo-m" />
+        <form className="login-form">
           <fieldset>
             <legend>Login</legend>
             <input
@@ -59,7 +59,6 @@ class Login extends Component {
               value={ userData.name }
               onChange={ this.handleChange }
             />
-            <BsSearch />
             <button
               type="submit"
               data-testid="login-submit-button"

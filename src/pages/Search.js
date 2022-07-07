@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BsSearch } from 'react-icons/bs';
 import AlbumCard from '../components/AlbumCard';
 import Header from '../components/Header';
 import Loading from '../components/Loading';
@@ -95,6 +96,7 @@ class Search extends Component {
                 value={ artistInput }
                 onChange={ this.handleChange }
               />
+              <BsSearch />
               <button
                 type="submit"
                 data-testid="search-artist-button"
