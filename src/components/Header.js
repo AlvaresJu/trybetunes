@@ -5,12 +5,14 @@ import { NavLink } from 'react-router-dom';
 import { getUser } from '../services/userAPI';
 import Loading from './Loading';
 import logo from '../images/Logo-header.png';
+import '../styles/header.css';
 
 class Header extends Component {
   constructor() {
     super();
     this.state = {
       userName: '',
+      userImage: '',
       loading: false,
     };
   }
@@ -27,6 +29,7 @@ class Header extends Component {
       const requestUserData = await getUser();
       this.setState({
         userName: requestUserData.name,
+        userImage: requestUserData.image,
         loading: false,
       }, () => {
         this.checkIfIsloaded();
@@ -41,14 +44,18 @@ class Header extends Component {
   }
 
   render() {
-    const { loading, userName } = this.state;
+    const { loading, userName, userImage } = this.state;
     if (loading) return <Loading />;
     return (
       <>
         <header data-testid="header-component">
           <img alt="Trybe Tunes logo" src={ logo } />
-          <div>
-            <BsPersonCircle />
+          <div className="user-header">
+            {
+              (userImage.length > 0)
+                ? <img src={ userImage } alt={ userName } />
+                : <BsPersonCircle className="user-icon" />
+            }
             <p data-testid="header-user-name">{ userName }</p>
           </div>
         </header>
