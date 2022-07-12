@@ -1,0 +1,53 @@
+.album-content {
+  display: flex;
+  justify-content: center;
+}
+
+.album-not-found {
+  color: rgb(2, 48, 49);
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 65px;
+  padding-top: 150px;
+}
+
+.album-container {
+  display: flex;
+  padding: 60px 30px 30px;
+}
+
+.album-data {
+  padding-right: 100px;
+}
+
+.album-data img {
+  border-radius: 6px;
+  margin-bottom: 30px;
+  width: 260px;
+}
+
+.album-data h4 {
+  color: rgb(2, 48, 49);
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 37px;
+  margin-bottom: 8px;
+  width: 270px;
+}
+
+.album-data p {
+  color: rgb(2, 48, 49);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 25px;
+  margin-bottom: 5px;
+}
+
+.music-list {
+  display: flex;
+  flex-direction: column;
+}

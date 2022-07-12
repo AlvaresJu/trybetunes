@@ -65,7 +65,7 @@ class Header extends Component {
             activeClassName="selected"
             data-testid="link-to-search"
           >
-            Buscar Artista
+            Buscar Álbuns
           </NavLink>
           <NavLink
             to="/favorites"

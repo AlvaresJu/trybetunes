@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Loading from './Loading';
+import '../styles/musicCard.css';
 
 class MusicCard extends Component {
   constructor() {
@@ -42,7 +43,7 @@ class MusicCard extends Component {
 
     const { musicData } = this.props;
     return (
-      <div>
+      <div className="music-data">
         <h5>{ musicData.trackName }</h5>
         <audio data-testid="audio-component" src={ musicData.previewUrl } controls>
           <track kind="captions" />

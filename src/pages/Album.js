@@ -5,6 +5,7 @@ import Loading from '../components/Loading';
 import getMusics from '../services/musicsAPI';
 import MusicCard from '../components/MusicCard';
 import { addSong, getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
+import '../styles/album.css';
 
 class Album extends Component {
   constructor() {
@@ -71,7 +72,7 @@ class Album extends Component {
 
   selectPageContent = (loading, albumData, dataMusics, favoriteList) => {
     if (loading) return <Loading />;
-    if (!albumData) return <h1>Álbum não encontrado</h1>;
+    if (!albumData) return <h1 className="album-not-found">Álbum não encontrado</h1>;
 
     const { artworkUrl100, collectionName, artistName, releaseDate } = albumData;
     const musicCards = dataMusics.map((musicObj) => (
@@ -83,8 +84,8 @@ class Album extends Component {
       />
     ));
     return (
-      <section>
-        <div>
+      <section className="album-container">
+        <div className="album-data">
           <img
             src={ artworkUrl100 }
             alt={ `Album: ${collectionName}` }
@@ -93,7 +94,7 @@ class Album extends Component {
           <p data-testid="artist-name">{ artistName }</p>
           <p>{ this.extractYear(releaseDate) }</p>
         </div>
-        <div>{ musicCards }</div>
+        <div className="music-list">{ musicCards }</div>
       </section>
     );
   }
@@ -109,11 +110,13 @@ class Album extends Component {
     return (
       <div data-testid="page-album">
         <Header isLoaded={ this.isHeaderLoaded } />
-        {
-          headerLoaded && this.selectPageContent(
-            loading, albumData, dataMusics, favoriteList,
-          )
-        }
+        <div className="album-content">
+          {
+            headerLoaded && this.selectPageContent(
+              loading, albumData, dataMusics, favoriteList,
+            )
+          }
+        </div>
       </div>
     );
   }
