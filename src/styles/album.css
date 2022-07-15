@@ -6,7 +6,6 @@
 .album-not-found {
   color: rgb(2, 48, 49);
   font-size: 60px;
-  font-style: normal;
   font-weight: 400;
   letter-spacing: 0.02em;
   line-height: 65px;
@@ -31,7 +30,6 @@
 .album-data h4 {
   color: rgb(2, 48, 49);
   font-size: 25px;
-  font-style: normal;
   font-weight: 700;
   line-height: 37px;
   margin-bottom: 8px;
@@ -41,7 +39,6 @@
 .album-data p {
   color: rgb(2, 48, 49);
   font-size: 18px;
-  font-style: normal;
   font-weight: 300;
   line-height: 25px;
   margin-bottom: 5px;

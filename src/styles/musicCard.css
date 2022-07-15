@@ -7,7 +7,6 @@
 .music-data h5 {
   color: rgb(0, 24, 19);
   font-size: 18px;
-  font-style: normal;
   font-weight: 500;
   line-height: 23px;
   padding-right: 10px;
@@ -23,7 +22,6 @@
   color: rgb(2, 48, 49);
   display: flex;
   font-size: 18px;
-  font-style: normal;
   font-weight: 300;
   line-height: 25px;
 }

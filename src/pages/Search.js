@@ -93,7 +93,7 @@ class Search extends Component {
                 type="text"
                 name="artistInput"
                 data-testid="search-artist-input"
-                placeholder="Nome do Artista/Banda"
+                placeholder="Nome de Artista/Banda"
                 value={ artistInput }
                 onChange={ this.handleChange }
               />
