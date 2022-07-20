@@ -1,0 +1,15 @@
+.favorite-list {
+  padding: 70px 50px 30px;
+}
+
+.favorite-song {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.favorite-song img {
+  border-radius: 100%;
+  margin-right: 30px;
+  width: 62px;
+}

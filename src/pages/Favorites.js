@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import Loading from '../components/Loading';
 import MusicCard from '../components/MusicCard';
 import { getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
+import '../styles/favorites.css';
 
 class Favorites extends Component {
   constructor() {
@@ -54,7 +55,7 @@ class Favorites extends Component {
     if (loading) return <Loading />;
 
     const musicCards = favoriteList.map((musicObj) => (
-      <div key={ musicObj.trackId }>
+      <div className="favorite-song" key={ musicObj.trackId }>
         <Link to={ `/album/${musicObj.collectionId}` }>
           <img
             src={ musicObj.artworkUrl60 }
@@ -69,7 +70,7 @@ class Favorites extends Component {
       </div>
     ));
     return (
-      <section>{ musicCards }</section>
+      <section className="favorite-list">{ musicCards }</section>
     );
   }
 
