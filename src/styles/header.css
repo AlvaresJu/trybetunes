@@ -1,6 +1,6 @@
 header {
   align-items: flex-end;
-  background: rgb(2, 48, 49);
+  background: #183642;
   box-shadow: 0 4px 1px rgba(0, 0, 0, 0.25);
   display: flex;
   justify-content: space-between;
@@ -13,7 +13,7 @@ header img {
 
 .user-header {
   align-items: center;
-  background: white;
+  background: #e4e1f4;
   border-radius: 50px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   display: flex;
@@ -22,7 +22,6 @@ header img {
 }
 
 .user-header p {
-  color: rgb(41, 49, 61);
   font-size: 16px;
   font-weight: 500;
   line-height: 18px;
@@ -30,8 +29,8 @@ header img {
 }
 
 .user-icon {
-  background: rgb(47, 193, 140);
-  border: 3px solid rgb(47, 193, 140);
+  background: rgb(44, 168, 123);
+  border: 3px solid rgb(44, 168, 123);
   border-radius: 100%;
   color: white;
   height: 36px;
@@ -45,7 +44,7 @@ header img {
 }
 
 nav {
-  background: rgb(240, 242, 245);
+  background: #e4e1f4;
   display: flex;
   font-size: 22px;
   font-weight: 700;
@@ -54,7 +53,7 @@ nav {
 }
 
 nav a {
-  border: 3px solid whitesmoke;
+  border: 3px solid #e4e1f4;
   color: rgb(44, 168, 123);
   padding: 12px 20px;
   text-align: center;
@@ -63,7 +62,7 @@ nav a {
 }
 
 .selected {
-  background: rgb(3, 107, 82);
+  background: #313d5a;
   border: none;
   color: white;
 }

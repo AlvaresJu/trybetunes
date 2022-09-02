@@ -6,19 +6,21 @@
 }
 
 .form-search input {
+  background-color: #e4e1f4;
   font-size: 15px;
   padding-right: 40px;
   width: 420px;
 }
 
 .search-icon {
-  color: rgb(61, 73, 92);
+  color: #183642;
   margin-left: -30px;
   margin-right: 30px;
 }
 
 .form-search button {
-  background: rgb(0, 59, 229);
+  background: rgb(44, 168, 123);
+  border: 1px outset #73628a;
   color: white;
   margin-left: 10px;
   padding: 8px 25px;

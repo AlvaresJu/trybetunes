@@ -34,10 +34,13 @@ button:disabled {
   cursor: wait;
 }
 
-input {
-  border: 1px solid rgb(225, 229, 235);
-  color: rgb(36, 44, 58);
+input, textarea {
+  border: 1px solid #73628A;
   font-weight: 500;
   line-height: 150%;
   padding: 10px 15px;
+}
+
+textarea:focus, input:focus {
+  outline: 1px groove #73628A;
 }

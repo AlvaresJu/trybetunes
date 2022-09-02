@@ -5,7 +5,7 @@
 }
 
 .music-data h5 {
-  color: rgb(0, 24, 19);
+  color: #313d5a;
   font-size: 18px;
   font-weight: 500;
   line-height: 23px;
@@ -19,7 +19,7 @@
 
 .music-data label {
   align-items: center;
-  color: rgb(2, 48, 49);
+  color: #313d5a;
   display: flex;
   font-size: 18px;
   font-weight: 300;

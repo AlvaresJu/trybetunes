@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import Loading from '../components/Loading';
 import { getUser } from '../services/userAPI';
 import genericUser from '../images/user_generic.png';
+import '../styles/profile.css';
 
 class Profile extends Component {
   constructor() {
@@ -47,23 +48,25 @@ class Profile extends Component {
 
     const { name, email, image, description } = userData;
     return (
-      <section>
-        <div>
-          <img
-            src={ (image.length > 0) ? image : genericUser }
-            alt={ name }
-            data-testid="profile-image"
-          />
-          <button type="button" onClick={ this.handleEditBtn }>
-            Editar perfil
-          </button>
+      <section className="profile-container">
+        <div className="profile-content">
+          <div className="profile-img-btn">
+            <img
+              src={ (image.length > 0) ? image : genericUser }
+              alt={ name }
+              data-testid="profile-image"
+            />
+            <button type="button" onClick={ this.handleEditBtn }>
+              Editar perfil
+            </button>
+          </div>
+          <h3>Nome:</h3>
+          <p>{name}</p>
+          <h3>E-mail:</h3>
+          <p>{email}</p>
+          <h3>Descrição:</h3>
+          <p>{description}</p>
         </div>
-        <h3>Nome:</h3>
-        <p>{name}</p>
-        <h3>E-mail:</h3>
-        <p>{email}</p>
-        <h3>Descrição:</h3>
-        <p>{description}</p>
       </section>
     );
   }

@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import Loading from '../components/Loading';
 import { getUser, updateUser } from '../services/userAPI';
 import genericUser from '../images/user_generic.png';
+import '../styles/profileEdit.css';
 
 class ProfileEdit extends Component {
   constructor() {
@@ -48,68 +49,70 @@ class ProfileEdit extends Component {
     if (loading) return <Loading />;
 
     return (
-      <form>
-        <div>
-          <img src={ (image.length > 0) ? image : genericUser } alt={ name } />
-          <label htmlFor="userImage">
-            Link para imagem:
+      <form className="edit-form">
+        <div className="profile-edit">
+          <div className="edit-img-input">
+            <img src={ (image.length > 0) ? image : genericUser } alt={ name } />
+            <label htmlFor="userImage">
+              Link para imagem:
+              <input
+                type="url"
+                data-testid="edit-input-image"
+                name="userImage"
+                id="userImage"
+                placeholder="Insira um link"
+                value={ image }
+                onChange={ this.handleChange }
+              />
+            </label>
+          </div>
+          <label htmlFor="userName">
+            Nome:
+            <p>Obs: Fique à vontade para usar seu nome social</p>
             <input
-              type="url"
-              data-testid="edit-input-image"
-              name="userImage"
-              id="userImage"
-              placeholder="Insira um link"
-              value={ image }
+              type="text"
+              data-testid="edit-input-name"
+              name="userName"
+              id="userName"
+              placeholder="Seu nome"
+              value={ name }
               onChange={ this.handleChange }
             />
           </label>
+          <label htmlFor="userEmail">
+            E-mail:
+            <p>Obs: Escolha um e-mail que consulte frequentemente</p>
+            <input
+              type="email"
+              data-testid="edit-input-email"
+              name="userEmail"
+              id="userEmail"
+              placeholder="usuario@usuario.com.br"
+              value={ email }
+              onChange={ this.handleChange }
+            />
+          </label>
+          <label htmlFor="userDescription">
+            Descrição:
+            <textarea
+              data-testid="edit-input-description"
+              name="userDescription"
+              id="userDescription"
+              placeholder="sobre mim"
+              maxLength={ 220 }
+              value={ description }
+              onChange={ this.handleChange }
+            />
+          </label>
+          <button
+            type="submit"
+            data-testid="edit-button-save"
+            disabled={ !this.validateForm() }
+            onClick={ this.handleSubmit }
+          >
+            Salvar
+          </button>
         </div>
-        <label htmlFor="userName">
-          Nome:
-          <p>Obs: Fique à vontade para usar seu nome social</p>
-          <input
-            type="text"
-            data-testid="edit-input-name"
-            name="userName"
-            id="userName"
-            placeholder="Seu nome"
-            value={ name }
-            onChange={ this.handleChange }
-          />
-        </label>
-        <label htmlFor="userEmail">
-          E-mail:
-          <p>Obs: Escolha um e-mail que consulte frequentemente</p>
-          <input
-            type="email"
-            data-testid="edit-input-email"
-            name="userEmail"
-            id="userEmail"
-            placeholder="usuario@usuario.com.br"
-            value={ email }
-            onChange={ this.handleChange }
-          />
-        </label>
-        <label htmlFor="userDescription">
-          Descrição:
-          <textarea
-            data-testid="edit-input-description"
-            name="userDescription"
-            id="userDescription"
-            placeholder="sobre mim"
-            maxLength={ 220 }
-            value={ description }
-            onChange={ this.handleChange }
-          />
-        </label>
-        <button
-          type="submit"
-          data-testid="edit-button-save"
-          disabled={ !this.validateForm() }
-          onClick={ this.handleSubmit }
-        >
-          Salvar
-        </button>
       </form>
     );
   }

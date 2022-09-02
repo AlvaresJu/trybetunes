@@ -50,7 +50,6 @@ class Login extends Component {
         <img alt="Trybe Tunes logo" src={ logo } className="logo-m" />
         <form className="login-form">
           <fieldset>
-            <legend>Login</legend>
             <input
               type="text"
               name="name"

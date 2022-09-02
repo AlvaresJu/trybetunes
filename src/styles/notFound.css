@@ -1,0 +1,28 @@
+.not-found {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-m {
+  padding: 10px 20px 60px;
+}
+
+.not-found-text {
+  color: #183642;
+  display: flex;
+  gap: 50px;
+  justify-content: space-between;
+  padding: 40px 50px;
+}
+
+.not-found-text h1 {
+  font-size: 110px;
+  font-weight: 400;
+}
+
+.not-found-text p {
+  font-size: 35px;
+  font-weight: 400;
+  width: 350px;
+}

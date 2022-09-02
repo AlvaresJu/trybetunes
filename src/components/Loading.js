@@ -1,9 +1,20 @@
 import React, { Component } from 'react';
+import ReactLoading from 'react-loading';
+import '../styles/loading.css';
 
 class Loading extends Component {
   render() {
     return (
-      <h1>Carregando...</h1>
+      <div className="loading-content">
+        <ReactLoading
+          type="bars"
+          color="#183642"
+          height={ 70 }
+          width={ 110 }
+          className="loading-icon"
+        />
+        <h1>Carregando...</h1>
+      </div>
     );
   }
 }

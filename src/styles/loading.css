@@ -1,0 +1,14 @@
+.loading-content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  justify-content: space-between;
+  margin-top: 70px;
+}
+
+.loading-content h1 {
+  color: #183642;
+  font-size: 30px;
+  font-weight: 400;
+}

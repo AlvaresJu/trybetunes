@@ -1,0 +1,58 @@
+.edit-form {
+  align-items: center;
+  color: #313d5a;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.profile-edit {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+}
+
+.profile-edit label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  gap: 8px;
+}
+
+.profile-edit input, .profile-edit textarea {
+  background-color: #e4e1f4;
+  font-size: 15px;
+  margin-bottom: 25px;
+  padding-right: 40px;
+}
+
+.profile-edit textarea {
+  font-family: Franklin Gothic Medium , Arial Narrow , Arial , sans-serif;
+}
+
+.profile-edit p {
+  font-size: 13px;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.profile-edit button {
+  background: rgb(44, 168, 123);
+  border: 1px outset #73628a;
+  color: white;
+  padding: 8px 32px;
+  width: 100%;
+}
+
+.edit-img-input {
+  align-items: center;
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.edit-img-input img {
+  border-radius: 50%;
+  width: 100px;
+}
