@@ -31,7 +31,7 @@ Link do projeto:
 
 
 # Sobre o Projeto
-  O projeto TrybeTunes é uma aplicação front-end que consome a [API gratúita do Itunes](https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/iTuneSearchAPI/index.html#//apple_ref/doc/uid/TP40017632-CH3-SW1), permitindo que a pessoa usuária reproduza músicas das mais variadas bandas e artistas, crie uma lista de músicas favoritas e edite dados do seu perfil. 
+  O projeto TrybeTunes é uma aplicação web front-end que consome a [API gratúita do Itunes](https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/iTuneSearchAPI/index.html#//apple_ref/doc/uid/TP40017632-CH3-SW1), permitindo que a pessoa usuária reproduza músicas das mais variadas bandas e artistas, crie uma lista de músicas favoritas e edite dados do seu perfil. 
 
 ## Contexto
   Esse projeto foi desenvolvido por _[Juliana Álvares](https://www.linkedin.com/in/juliana-%C3%A1lvares-246872112/)_, como parte do processo de aprendizado do Módulo de Front-end, do curso de Desenvolvimento Web da [Trybe](https://www.betrybe.com/) :rocket:
