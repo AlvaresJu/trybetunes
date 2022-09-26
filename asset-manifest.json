@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/trybetunes-project/static/css/main.ae344e71.chunk.css",
-    "main.js": "/trybetunes-project/static/js/main.d0d1518b.chunk.js",
-    "main.js.map": "/trybetunes-project/static/js/main.d0d1518b.chunk.js.map",
+    "main.css": "/trybetunes-project/static/css/main.0da22012.chunk.css",
+    "main.js": "/trybetunes-project/static/js/main.e5999bf5.chunk.js",
+    "main.js.map": "/trybetunes-project/static/js/main.e5999bf5.chunk.js.map",
     "runtime-main.js": "/trybetunes-project/static/js/runtime-main.37fd213d.js",
     "runtime-main.js.map": "/trybetunes-project/static/js/runtime-main.37fd213d.js.map",
     "static/js/2.3cd1f0f2.chunk.js": "/trybetunes-project/static/js/2.3cd1f0f2.chunk.js",
     "static/js/2.3cd1f0f2.chunk.js.map": "/trybetunes-project/static/js/2.3cd1f0f2.chunk.js.map",
     "index.html": "/trybetunes-project/index.html",
-    "static/css/main.ae344e71.chunk.css.map": "/trybetunes-project/static/css/main.ae344e71.chunk.css.map",
+    "static/css/main.0da22012.chunk.css.map": "/trybetunes-project/static/css/main.0da22012.chunk.css.map",
     "static/js/2.3cd1f0f2.chunk.js.LICENSE.txt": "/trybetunes-project/static/js/2.3cd1f0f2.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.37fd213d.js",
     "static/js/2.3cd1f0f2.chunk.js",
-    "static/css/main.ae344e71.chunk.css",
-    "static/js/main.d0d1518b.chunk.js"
+    "static/css/main.0da22012.chunk.css",
+    "static/js/main.e5999bf5.chunk.js"
   ]
 }
