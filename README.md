@@ -53,7 +53,7 @@ Linguagens:
 
 ## Funcionalidades Implementadas
 
-[![TrybeTunes Gif][product-gif]](githubpages)
+[![TrybeTunes Gif][product-gif]](githubpages do projeto)
 
   - Configuração de rotas;
   - Login com identificação da pessoa usuária;
@@ -75,12 +75,12 @@ Linguagens:
 
 ## Clonando o Repositório
   ```bash
-   git clone git@github.com:AlvaresJu/trybetunes-project.git
-   ```
+    git clone git@github.com:AlvaresJu/trybetunes-project.git
+  ```
 ## Instalando Dependências
   ```bash
-  cd trybetunes-project/
-  npm install
+    cd trybetunes-project/
+    npm install
   ``` 
 ## Executando a Aplicação
   ```bash
