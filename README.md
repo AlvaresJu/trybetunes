@@ -42,18 +42,18 @@ Link do projeto:
 
 ## Tecnologias Utilizadas
 
-Front-end:
-* [![React][React.js]][React-url]
-* [![React Router][React-router]][React-router-url]
+  Front-end:
+  * [![React][React.js]][React-url]
+  * [![React Router][React-router]][React-router-url]
 
-Linguagens:
-* [![JavaScript - ES6][JavaScript]][JavaScript-url]
-* [![CSS3][CSS3]][CSS3-url]
-* [![HTML5][HTML5]][HTML5-url]
+  Linguagens:
+  * [![JavaScript - ES6][JavaScript]][JavaScript-url]
+  * [![CSS3][CSS3]][CSS3-url]
+  * [![HTML5][HTML5]][HTML5-url]
 
 ## Funcionalidades Implementadas
 
-[![TrybeTunes Gif][product-gif]](githubpages do projeto)
+  [![TrybeTunes Gif][product-gif]](githubpages)
 
   - Configuração de rotas;
   - Login com identificação da pessoa usuária;
