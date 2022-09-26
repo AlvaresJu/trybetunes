@@ -1,10 +1,3 @@
-<!-- 
-⚠️ IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
-
--->
 # TrybeTunes Project
 
 [![TrybeTunes Screen Shot][product-screenshot]](githubpages)
@@ -82,7 +75,7 @@ Linguagens:
 
 ## Clonando o Repositório
   ```bash
-   git clone 
+   git clone git@github.com:AlvaresJu/trybetunes-project.git
    ```
 ## Instalando Dependências
   ```bash
