@@ -2,7 +2,7 @@
   "name": "trybetunes",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://AlvaresJu.github.io/trybetunes-project",
+  "homepage": "https://alvaresju.github.io/trybetunes-project",
   "engines": {
     "node": "16"
   },
