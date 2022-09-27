@@ -1,8 +1,8 @@
 # TrybeTunes Project
 
-[![TrybeTunes Screen Shot][product-screenshot]](githubpages)
+[![TrybeTunes Screen Shot][product-screenshot]](https://alvaresju.github.io/trybetunes/)
 
-Link do projeto: 
+Link do projeto: [https://alvaresju.github.io/trybetunes/](https://alvaresju.github.io/trybetunes/)
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -53,7 +53,7 @@ Link do projeto:
 
 ## Funcionalidades Implementadas
 
-  [![TrybeTunes Gif][product-gif]](githubpages)
+  [![TrybeTunes Gif][product-gif]](https://alvaresju.github.io/trybetunes/)
 
   - Configuração de rotas;
   - Login com identificação da pessoa usuária;
