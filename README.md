@@ -6,7 +6,7 @@ Link da página do projeto: [https://alvaresju.github.io/trybetunes/](https://al
 
 <!-- TABLE OF CONTENTS -->
 <details>
-  <summary>Sumário</summary>
+  <summary><h2><strong>Sumário</strong></h2></summary>
   <ol>
     <li>
       <a href="#sobre-o-projeto">Sobre o Projeto</a>
@@ -42,11 +42,11 @@ Link da página do projeto: [https://alvaresju.github.io/trybetunes/](https://al
 
 ## Tecnologias Utilizadas
 
-  Front-end:
+  #### Front-end:
   * [![React][React.js]][React-url]
   * [![React Router][React-router]][React-router-url]
 
-  Linguagens:
+  #### Linguagens:
   * [![JavaScript - ES6][JavaScript]][JavaScript-url]
   * [![CSS3][CSS3]][CSS3-url]
   * [![HTML5][HTML5]][HTML5-url]
