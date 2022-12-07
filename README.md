@@ -2,7 +2,7 @@
 
 [![TrybeTunes Screen Shot][product-screenshot]](https://alvaresju.github.io/trybetunes/)
 
-Link do projeto: [https://alvaresju.github.io/trybetunes/](https://alvaresju.github.io/trybetunes/)
+Link da página do projeto: [https://alvaresju.github.io/trybetunes/](https://alvaresju.github.io/trybetunes/)
 
 <!-- TABLE OF CONTENTS -->
 <details>
