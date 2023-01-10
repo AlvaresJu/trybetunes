@@ -2,7 +2,7 @@
 
 [![TrybeTunes Screen Shot][product-screenshot]](https://alvaresju.github.io/trybetunes/)
 
-Link da página do projeto: [https://alvaresju.github.io/trybetunes/](https://alvaresju.github.io/trybetunes/)
+### Link da página do projeto: [https://alvaresju.github.io/trybetunes/](https://alvaresju.github.io/trybetunes/)
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -84,7 +84,6 @@ Link da página do projeto: [https://alvaresju.github.io/trybetunes/](https://al
   ``` 
 ## Executando a Aplicação
   ```bash
-    cd trybetunes-project/
     npm start
   ```
 <!-- Caso a aplicação tenha testes:
