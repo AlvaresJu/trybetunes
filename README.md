@@ -71,15 +71,15 @@
   Para rodar localmente é necessário garantir o cumprimento dos pré-requisitos, fazer uma cópia e rodar as instruções conforme a seguir:
 
 ## Pré-requisitos
-  [Node.js](https://nodejs.org/en/) em versão 16.
+  [Node.js](https://nodejs.org/en/) em versão 16 ou superior.
 
 ## Clonando o Repositório
   ```bash
-    git clone git@github.com:AlvaresJu/trybetunes-project.git
+    git clone git@github.com:AlvaresJu/trybetunes.git
   ```
 ## Instalando Dependências
   ```bash
-    cd trybetunes-project/
+    cd trybetunes/
     npm install
   ``` 
 ## Executando a Aplicação
