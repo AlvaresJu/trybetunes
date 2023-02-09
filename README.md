@@ -4,6 +4,7 @@
 
 ### Link da página do projeto: [https://alvaresju.github.io/trybetunes/](https://alvaresju.github.io/trybetunes/)
 
+
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary><h2><strong>Sumário</strong></h2></summary>
@@ -75,7 +76,7 @@
 
 ## Clonando o Repositório
   ```bash
-    git clone git@github.com:AlvaresJu/trybetunes.git
+    git clone https://github.com/AlvaresJu/trybetunes.git
   ```
 ## Instalando Dependências
   ```bash
