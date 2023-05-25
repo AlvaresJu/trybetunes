@@ -100,10 +100,10 @@
   Como descrito, este projeto foi proposto pela [Trybe](https://www.betrybe.com/) e desenvolvido por _[Juliana Álvares](https://www.linkedin.com/in/juliana-%C3%A1lvares-246872112/)_ durante o curso de Desenvolvimento Web realizado. Por isso, foram disponibilizados pela Trybe alguns arquivos base de configurações e auxiliares ao desenvolvimento do projeto. Segue especificação de autoria dos principais documentos:
   
   Arquivos/diretórios desenvolvidos pela autora do projeto (Juliana Álvares):
-  > src/components/ , src/pages/ , src/styles/ , src/App.js , src/index.js , src/index.css
+  > Quase todos os src/*
   
   Arquivos/diretórios desenvolvidos pela Trybe:
-  > src/images/ , src/services/ , eslintrc.json , stylelintrc.json , package.json , package-lock.json
+  > src/images/* , src/services/* , eslintrc.json , stylelintrc.json , package.json , package-lock.json
 
   
 <!-- MARKDOWN LINKS & IMAGES -->
